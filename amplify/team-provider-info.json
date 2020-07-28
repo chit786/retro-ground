@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-retroground-dev-212724-authRole",
+            "UnauthRoleArn": "arn:aws:iam::038351796974:role/amplify-retroground-dev-212724-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::038351796974:role/amplify-retroground-dev-212724-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "amplify-retroground-dev-212724-deployment",
+            "UnauthRoleName": "amplify-retroground-dev-212724-unauthRole",
+            "StackName": "amplify-retroground-dev-212724",
+            "StackId": "arn:aws:cloudformation:eu-west-1:038351796974:stack/amplify-retroground-dev-212724/69abed00-d108-11ea-8ac5-0a8558ee99ba",
+            "AmplifyAppId": "dk0tjfg7x6yk9"
+        }
+    }
+}
