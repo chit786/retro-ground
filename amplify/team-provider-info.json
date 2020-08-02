@@ -10,6 +10,11 @@
             "StackName": "amplify-retroground-dev-212724",
             "StackId": "arn:aws:cloudformation:eu-west-1:038351796974:stack/amplify-retroground-dev-212724/69abed00-d108-11ea-8ac5-0a8558ee99ba",
             "AmplifyAppId": "dk0tjfg7x6yk9"
+        },
+        "categories": {
+            "auth": {
+                "retrogroundf33badea": {}
+            }
         }
     }
 }
