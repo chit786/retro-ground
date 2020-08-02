@@ -5,6 +5,8 @@ import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 
+import { withAuthenticator } from '@aws-amplify/ui-react'
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -33,7 +35,7 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
+            <Redirect from="/" to="/page/Boards" exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
@@ -41,4 +43,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default withAuthenticator(App);
