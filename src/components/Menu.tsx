@@ -10,10 +10,11 @@ import {
   IonNote,
 } from '@ionic/react';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
+import { Auth } from 'aws-amplify';
 
 interface AppPage {
   url: string;
@@ -64,14 +65,21 @@ const appPages: AppPage[] = [
 const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 const Menu: React.FC = () => {
+  const [userName, setUserName] = useState('');
   const location = useLocation();
+
+  useEffect(() => {
+    Auth.currentUserInfo().then(user => {
+      setUserName(user.attributes.email);
+    });
+  });
 
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="board-list">
           <IonListHeader>Boards</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonNote>Hi ! {userName}</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>

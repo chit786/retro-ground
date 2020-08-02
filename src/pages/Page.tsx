@@ -1,9 +1,9 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar, IonButton, IonIcon } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon } from '@ionic/react';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
-import { logOutOutline } from 'ionicons/icons';
+import { logOutOutline, menu } from 'ionicons/icons';
 import { Auth, Hub } from 'aws-amplify';
 
 const Page: React.FC = () => {
@@ -38,6 +38,23 @@ const Page: React.FC = () => {
         .catch(err => console.log(err));
   }
 
+  const toggleMenu = () => {
+    const splitPane = document.querySelector('ion-split-pane');
+    const windowWidth = window.innerWidth;
+    const splitPaneShownAt = 992;
+    const when = `(min-width: ${splitPaneShownAt}px)`;
+    if (windowWidth >= splitPaneShownAt) {
+      // split pane view is visible
+      const open = splitPane!.when === when;
+      splitPane!.when = open ? false : when;
+    } else {
+      // split pane view is not visible
+      // toggle menu open
+      const menu = splitPane!.querySelector('ion-menu');
+      return menu!.open();
+    }
+  }
+
   const { name } = useParams<{ name: string; }>();
 
   return (
@@ -45,7 +62,9 @@ const Page: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonMenuButton />
+            <IonButton onClick={() => toggleMenu()}>
+              <IonIcon icon={menu} size='large' slot="icon-only" />
+            </IonButton>
           </IonButtons>
           <IonTitle>{name}</IonTitle>
           <IonButtons slot="end">
