@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "retrogroundf33badea_identitypool_f33badea",
+    "identityPoolName": "retroground739d5147_identitypool_739d5147",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "retrogf33badea",
-    "userPoolName": "retrogroundf33badea_userpool_f33badea",
+    "resourceNameTruncated": "retrog739d5147",
+    "userPoolName": "retroground739d5147_userpool_739d5147",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "retrogf33badea_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "retrog739d5147_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "f33badea",
-    "resourceName": "retrogroundf33badea",
+    "sharedId": "739d5147",
+    "resourceName": "retroground739d5147",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -49,11 +49,6 @@
     "usernameAttributes": [
         "email"
     ],
-    "triggers": "{}",
     "userPoolGroupList": [],
-    "parentStack": {
-        "Ref": "AWS::StackId"
-    },
-    "permissions": [],
     "dependsOn": []
 }

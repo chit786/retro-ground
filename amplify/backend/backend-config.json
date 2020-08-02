@@ -1,9 +1,10 @@
 {
 	"auth": {
-		"retrogroundf33badea": {
+		"retroground739d5147": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
-			"dependsOn": []
+			"dependsOn": [],
+			"customAuth": false
 		}
 	}
 }
